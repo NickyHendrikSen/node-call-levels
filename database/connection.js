@@ -19,3 +19,5 @@ db.getItem = () => {
         })
     })
 }
+
+module.exports = db
