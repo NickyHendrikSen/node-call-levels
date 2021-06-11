@@ -7,11 +7,15 @@ var con = mysql.createConnection({
 })
 
 // Create Database
-con.connect(function(error){
-    if(error) throw error;
+function createDatabase(){
     con.query("CREATE DATABASE mydatabase", function(err, res){
         if(err) throw err;
         console.log("Database successfully created!")
     })
+}
+
+con.connect(function(error){
+    if(error) throw error;
+    createDatabase()
 })
 
